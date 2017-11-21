@@ -1,70 +1,59 @@
 @import '../../styles/vars';
 
-form {
-  max-width: 458px;
-  float: right;
-  position: relative;
-  display: table;
-  border-collapse: separate;
-  width: 100%;
+ionic-newsletter-signup {
 
-  @media (max-width: $screen-sm-max) {
-    max-width: calc(100% - 340px);
+  form {
+    position: relative;
+    display: flex;
+    border-collapse: separate;
+    width: 100%;
+
+    @media (max-width: $screen-sm-max) {
+      max-width: calc(100% - 340px);
+    }
+
+    @media (max-width: $screen-xs-max) {
+      float: none;
+      max-width: 100%;
+      margin-top: 15px;
+    }
   }
 
-  @media (max-width: $screen-xs-max) {
-    float: none;
-    max-width: 100%;
-    margin-top: 15px;
-  }
-}
-
-input {
-  border: 1px solid rgba(255, 255, 255, 0);
-  background: rgba(255, 255, 255, .2);
-  font-size: 13px;
-  color: white;
-  box-shadow: none;
-  font-weight: normal;
-  height: 40px;
-  padding: 1px 16px 0px;
-  transition: .2s background, .2s box-shadow;
-
-  &:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
-  }
-
-  &:focus {
+  input {
+    border: 1px solid rgba(white, 0);
+    background: rgba(white, .2);
+    border-radius: 4px 0 0 4px;
+    font-size: 13px;
+    color: white;
     box-shadow: none;
-    border: 1px solid rgba(255,255,255,0);
-    background: rgba(255,255,255,.25);
+    font-weight: normal;
+    height: 40px;
+    outline: 0;
+    flex-grow: 1;
+    padding: 1px 16px 0px;
+    transition: .2s background, .2s box-shadow;
+
+    &:hover {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 1px solid rgba(white,0);
+      background: rgba(white,.25);
+    }
+
+    &::placeholder {
+      padding-left: 0;
+      color: #bbceef;
+    }
   }
 
-  &::placeholder {
-    padding-left: 0;
-    color: #bbceef;
-  }
-}
-
-button {
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
-  font-weight: 500;
-  font-size: 14px;
-  padding: 11px 13px 10px;
-  border-radius: 2px;
-  letter-spacing: 0;
-  text-transform: none;
-  background: #fff;
-  color: #4a8bfc;
-  line-height: 1.4em;
-  transition: all .2s linear;
-
-  &:hover {
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-  }
-
-  &:active {
-    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
-    background: white;
+  ionic-button button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 11px 13px 10px;
   }
 }

@@ -1,25 +1,21 @@
 @import '../../styles/vars';
 @mixin colorize($color, $dark: true) {
   background: $color;
-  border-color: $color;
 
   @if $dark {
     color: white;
 
     &:hover {
       background: lighten($color, 5);
-      border-color: lighten($color, 5);
     }
 
     &:active {
       background: darken($color, 5);
-      border-color: darken($color, 5);
     }
   } @else {
 
     &:active {
       background: darken($color, 2);
-      border-color: darken($color, 2);
     }
   }
 }
@@ -32,10 +28,11 @@ ionic-button {
     font-weight: 400;
     font-family: $font-family-default;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
-    border: 1px solid transparent;
+    border: 0;
     outline: none;
+    height: 100%;
     transition:
-      background-color .3s,
+      background-color .2s,
       border-color .3s,
       box-shadow .3s,
       color .3s;
@@ -44,10 +41,7 @@ ionic-button {
     &.white {
       @include colorize(white, false);
       border-color: $lightgrey;
-
-      &:active {
-        border-color: $lightgrey;
-      }
+      color: $blue;
     }
 
     &:hover {
