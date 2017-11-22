@@ -31,7 +31,8 @@ declare global {
     export interface IonicButtonAttributes extends HTMLAttributes {
       
         color?: string,
-        type?: string
+        type?: string,
+        disabled?: boolean
     }
   }
 }
@@ -62,8 +63,6 @@ declare global {
   namespace JSXElements {
     export interface IonicNewsletterSignupAttributes extends HTMLAttributes {
       
-        first?: string,
-        last?: string
     }
   }
 }
