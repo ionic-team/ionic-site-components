@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'ionic-newsletter-signup',
@@ -6,6 +6,10 @@ import { Component, State } from '@stencil/core';
   shadow: false
 })
 export class IonicNewsletterSignup {
+
+  @Prop() placeholder: string = 'Email address';
+  @Prop() buttonText: string = 'Subscribe';
+  @Prop() darkMode: boolean = false;
 
   @State() isLoading: boolean = false;
   @State() hasSubmitted: boolean = false;
@@ -19,7 +23,7 @@ export class IonicNewsletterSignup {
     e.preventDefault();
     this.isLoading = true;
     var xhr = new XMLHttpRequest();   // new HttpRequest instance
-    xhr.open("POST", "http://localhost:3003/api/v1/newsletter");
+    xhr.open("POST", "/api/v1/newsletter");
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.onreadystatechange = () => {
       console.log(xhr)
@@ -34,7 +38,9 @@ export class IonicNewsletterSignup {
 
   render() {
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
+      <form 
+        onSubmit={(e) => this.handleSubmit(e)} 
+        class={this.darkMode ? 'dark' : null}>
 
         <input
           name="email"
@@ -42,14 +48,15 @@ export class IonicNewsletterSignup {
           value={this.email}
           onInput={() => this.handleEmailChange(event)}
           disabled={this.isLoading}
-          placeholder="Get the latest ionic framework news and updates"
+          placeholder={this.placeholder}
           required />
 
+        <ionic-button 
+          color={this.darkMode ? 'white' : 'default'}
+          type="submit"
+          disabled={this.isLoading || this.hasSubmitted}>
 
-        <ionic-button color="white"
-                      type="submit"
-                      disabled={this.isLoading || this.hasSubmitted}>
-          {this.hasSubmitted ? 'Added!' : 'Email me!'}
+          {this.hasSubmitted ? 'Added!' : this.buttonText}
         </ionic-button>
       </form>
     );

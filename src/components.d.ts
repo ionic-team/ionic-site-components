@@ -63,6 +63,9 @@ declare global {
   namespace JSXElements {
     export interface IonicNewsletterSignupAttributes extends HTMLAttributes {
       
+        placeholder?: string,
+        buttonText?: string,
+        darkMode?: boolean
     }
   }
 }
