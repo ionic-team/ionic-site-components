@@ -5,7 +5,7 @@ exports.config = {
     { components: ['ionic-button'] },
     { components: ['ionic-newsletter-signup'] }
   ],
-  publicPath: 'stencil'
+  publicPath: '/stencil'
 };
 
 exports.devServer = {
