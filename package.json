@@ -1,5 +1,5 @@
 {
-  "name": "ionic-site-components",
+  "name": "@ionic/ionic-site-components",
   "version": "0.0.1",
   "description": "Stencil components used by the websites belonging to the Ionic Framework team.",
   "main": "dist/collection/index.js",
@@ -16,8 +16,7 @@
     "start": "npm run dev",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "prepublish": "npm run build",
-    "postinstall": "npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@stencil/core": "next"
@@ -50,5 +49,10 @@
       "json",
       "jsx"
     ]
-  }
+  },
+  "keywords": [
+    "webcomponents",
+    "ionic-site",
+    "stencil"
+  ]
 }
