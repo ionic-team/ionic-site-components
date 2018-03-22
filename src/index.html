@@ -15,28 +15,40 @@
     body {
       font-family: "Avenir Next","Helvetica Neue",Helvetica,sans-serif;
       background: #b8ceff;
-      padding: 24px;
+      padding: 0;
     }
 
     ionic-newsletter-signup {
       margin: 64px auto;
       display: block;
     }
+
+    .content {
+      padding: 24px;
+    }
   </style>
   <script src="/build/ionic-site-components.js"></script>
 
 </head>
 <body>
+  <ionic-snap-bar>
+    <strong>Ionic Pro.</strong>
+    <span>The powerful mobile development toolkit.</span>
+    <a href="">Explore ionic pro</a>
+  </ionic-snap-bar>
 
-  <ionic-button>Blue button</ionic-button>
-  <ionic-button color="white">White button</ionic-button>
-  <br/>
-  <ionic-newsletter-signup/>
-  <br/>
-  <ionic-newsletter-signup 
-    dark-mode="true" 
-    placeholder="Get the latest ionic framework news and updates"
-    button-text="Email me!"/>
+  <div class="content">
+    <ionic-button>Blue button</ionic-button>
+    <ionic-button color="white">White button</ionic-button>
+    <br/>
+    <ionic-newsletter-signup/>
+    <br/>
+    <ionic-newsletter-signup
+      dark-mode="true"
+      placeholder="Get the latest ionic framework news and updates"
+      button-text="Email me!"/>
+  </div>
+
 
 </body>
 </html>

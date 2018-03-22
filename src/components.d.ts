@@ -3,6 +3,22 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+declare global {
+  namespace JSX {
+    interface Element {}
+    export interface IntrinsicElements {}
+  }
+  namespace JSXElements {}
+
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
+  }
+
+  interface HTMLAttributes {}
+}
 
 
 import {
@@ -10,7 +26,7 @@ import {
 } from './components/ionic-button/ionic-button';
 
 declare global {
-  interface HTMLIonicButtonElement extends IonicButton, HTMLElement {
+  interface HTMLIonicButtonElement extends IonicButton, HTMLStencilElement {
   }
   var HTMLIonicButtonElement: {
     prototype: HTMLIonicButtonElement;
@@ -29,10 +45,9 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicButtonAttributes extends HTMLAttributes {
-      
-        color?: string,
-        type?: string,
-        disabled?: boolean
+      color?: string;
+      disabled?: boolean;
+      type?: string;
     }
   }
 }
@@ -43,7 +58,7 @@ import {
 } from './components/ionic-newsletter-signup/ionic-newsletter-signup';
 
 declare global {
-  interface HTMLIonicNewsletterSignupElement extends IonicNewsletterSignup, HTMLElement {
+  interface HTMLIonicNewsletterSignupElement extends IonicNewsletterSignup, HTMLStencilElement {
   }
   var HTMLIonicNewsletterSignupElement: {
     prototype: HTMLIonicNewsletterSignupElement;
@@ -62,11 +77,41 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicNewsletterSignupAttributes extends HTMLAttributes {
-      
-        placeholder?: string,
-        buttonText?: string,
-        darkMode?: boolean
+      buttonText?: string;
+      darkMode?: boolean;
+      placeholder?: string;
     }
   }
 }
 
+
+import {
+  IonicSnapBar as IonicSnapBar
+} from './components/ionic-snap-bar/ionic-snap-bar';
+
+declare global {
+  interface HTMLIonicSnapBarElement extends IonicSnapBar, HTMLStencilElement {
+  }
+  var HTMLIonicSnapBarElement: {
+    prototype: HTMLIonicSnapBarElement;
+    new (): HTMLIonicSnapBarElement;
+  };
+  interface HTMLElementTagNameMap {
+    "ionic-snap-bar": HTMLIonicSnapBarElement;
+  }
+  interface ElementTagNameMap {
+    "ionic-snap-bar": HTMLIonicSnapBarElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "ionic-snap-bar": JSXElements.IonicSnapBarAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface IonicSnapBarAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+declare global { namespace JSX { interface StencilJSX {} } }

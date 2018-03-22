@@ -1,3 +1,5 @@
+const sass = require('@stencil/sass');
+
 exports.config = {
   namespace: 'ionic-site-components',
   generateDistribution: true,
@@ -5,7 +7,16 @@ exports.config = {
     { components: ['ionic-button'] },
     { components: ['ionic-newsletter-signup'] }
   ],
-  publicPath: '/stencil'
+  plugins: [
+    sass()
+  ],
+  outputTargets: [
+    {
+      type: 'dist',
+      dir: 'dist',
+      baseUrl: '/stencil',
+    }
+  ]
 };
 
 exports.devServer = {

@@ -1,9 +1,9 @@
 {
   "name": "@ionic/ionic-site-components",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Stencil components used by the websites belonging to the Ionic Framework team.",
-  "main": "dist/collection/index.js",
-  "types": "dist/collection/index.d.ts",
+  "main": "dist/ionic-site-components.js",
+  "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
@@ -19,10 +19,11 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@stencil/core": "next"
+    "@stencil/core": "0.7.2",
+    "@stencil/sass": "0.0.3"
   },
   "devDependencies": {
-    "@stencil/dev-server": "latest",
+    "@stencil/dev-server": "0.0.18",
     "@stencil/utils": "latest",
     "@types/jest": "^21.1.1",
     "jest": "^21.2.1"
