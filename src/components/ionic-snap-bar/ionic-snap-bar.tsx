@@ -24,7 +24,9 @@ export class IonicSnapBar {
       <div class={`wrapper ${this.active ? 'active' : ''}`}>
         <slot/>
       </div>,
-      <div class="close" onClick={this.close.bind(this)}>&#xd7;</div>
+      <div id="snap-bar-close"
+           class="close"
+           onClick={this.close.bind(this)}>&#xd7;</div>
     ];
   }
 }
