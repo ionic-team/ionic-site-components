@@ -12,7 +12,7 @@ export class IonicSnapBar {
   componentDidLoad() {
     setTimeout(() => {
       this.active = true;
-    }, 3000);
+    }, 2500);
   }
 
   close() {

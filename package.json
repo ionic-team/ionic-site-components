@@ -1,6 +1,6 @@
 {
   "name": "@ionic/ionic-site-components",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Stencil components used by the websites belonging to the Ionic Framework team.",
   "main": "dist/ionic-site-components.js",
   "types": "dist/types/components.d.ts",

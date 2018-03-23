@@ -2,11 +2,16 @@
 
 ionic-snap-bar {
   background: linear-gradient(#17203d, #1f2c53);
-  display: block;
+  display: none;
   width: 100%;
   position: relative;
   padding: 0 24px;
+  z-index: 1;
   font-family: $font-family-eina;
+
+  &.hydrated {
+    display: block;
+  }
 
   .wrapper {
     padding: 0 16px;
