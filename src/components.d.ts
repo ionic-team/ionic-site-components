@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -10,9 +13,12 @@ declare global {
   }
   namespace JSXElements {}
 
+  interface HTMLElement {
+    componentOnReady?: () => Promise<this | null>;
+  }
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
-    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -21,97 +27,145 @@ declare global {
 }
 
 
-import {
-  IonicButton as IonicButton
-} from './components/ionic-button/ionic-button';
-
 declare global {
-  interface HTMLIonicButtonElement extends IonicButton, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface IonicButton {
+      'color': string;
+      'disabled': boolean;
+      'type': string;
+    }
   }
+
+  interface HTMLIonicButtonElement extends StencilComponents.IonicButton, HTMLStencilElement {}
+
   var HTMLIonicButtonElement: {
     prototype: HTMLIonicButtonElement;
     new (): HTMLIonicButtonElement;
   };
   interface HTMLElementTagNameMap {
-    "ionic-button": HTMLIonicButtonElement;
+    'ionic-button': HTMLIonicButtonElement;
   }
   interface ElementTagNameMap {
-    "ionic-button": HTMLIonicButtonElement;
+    'ionic-button': HTMLIonicButtonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ionic-button": JSXElements.IonicButtonAttributes;
+      'ionic-button': JSXElements.IonicButtonAttributes;
     }
   }
   namespace JSXElements {
     export interface IonicButtonAttributes extends HTMLAttributes {
-      color?: string;
-      disabled?: boolean;
-      type?: string;
+      'color'?: string;
+      'disabled'?: boolean;
+      'type'?: string;
     }
   }
 }
 
 
-import {
-  IonicNewsletterSignup as IonicNewsletterSignup
-} from './components/ionic-newsletter-signup/ionic-newsletter-signup';
-
 declare global {
-  interface HTMLIonicNewsletterSignupElement extends IonicNewsletterSignup, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface IonicNewsletterSignup {
+      'buttonText': string;
+      'darkMode': boolean;
+      'placeholder': string;
+    }
   }
+
+  interface HTMLIonicNewsletterSignupElement extends StencilComponents.IonicNewsletterSignup, HTMLStencilElement {}
+
   var HTMLIonicNewsletterSignupElement: {
     prototype: HTMLIonicNewsletterSignupElement;
     new (): HTMLIonicNewsletterSignupElement;
   };
   interface HTMLElementTagNameMap {
-    "ionic-newsletter-signup": HTMLIonicNewsletterSignupElement;
+    'ionic-newsletter-signup': HTMLIonicNewsletterSignupElement;
   }
   interface ElementTagNameMap {
-    "ionic-newsletter-signup": HTMLIonicNewsletterSignupElement;
+    'ionic-newsletter-signup': HTMLIonicNewsletterSignupElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ionic-newsletter-signup": JSXElements.IonicNewsletterSignupAttributes;
+      'ionic-newsletter-signup': JSXElements.IonicNewsletterSignupAttributes;
     }
   }
   namespace JSXElements {
     export interface IonicNewsletterSignupAttributes extends HTMLAttributes {
-      buttonText?: string;
-      darkMode?: boolean;
-      placeholder?: string;
+      'buttonText'?: string;
+      'darkMode'?: boolean;
+      'placeholder'?: string;
     }
   }
 }
 
 
-import {
-  IonicSnapBar as IonicSnapBar
-} from './components/ionic-snap-bar/ionic-snap-bar';
+declare global {
+
+  namespace StencilComponents {
+    interface IonicSearch {
+
+    }
+  }
+
+  interface HTMLIonicSearchElement extends StencilComponents.IonicSearch, HTMLStencilElement {}
+
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
+  };
+  interface HTMLElementTagNameMap {
+    'ionic-search': HTMLIonicSearchElement;
+  }
+  interface ElementTagNameMap {
+    'ionic-search': HTMLIonicSearchElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'ionic-search': JSXElements.IonicSearchAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface IonicSearchAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 
 declare global {
-  interface HTMLIonicSnapBarElement extends IonicSnapBar, HTMLStencilElement {
+
+  namespace StencilComponents {
+    interface IonicSnapBar {
+
+    }
   }
+
+  interface HTMLIonicSnapBarElement extends StencilComponents.IonicSnapBar, HTMLStencilElement {}
+
   var HTMLIonicSnapBarElement: {
     prototype: HTMLIonicSnapBarElement;
     new (): HTMLIonicSnapBarElement;
   };
   interface HTMLElementTagNameMap {
-    "ionic-snap-bar": HTMLIonicSnapBarElement;
+    'ionic-snap-bar': HTMLIonicSnapBarElement;
   }
   interface ElementTagNameMap {
-    "ionic-snap-bar": HTMLIonicSnapBarElement;
+    'ionic-snap-bar': HTMLIonicSnapBarElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ionic-snap-bar": JSXElements.IonicSnapBarAttributes;
+      'ionic-snap-bar': JSXElements.IonicSnapBarAttributes;
     }
   }
   namespace JSXElements {
     export interface IonicSnapBarAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
 
 declare global { namespace JSX { interface StencilJSX {} } }
+
+export declare function defineCustomElements(window: any): void;
