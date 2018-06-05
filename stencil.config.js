@@ -2,18 +2,21 @@ const sass = require('@stencil/sass');
 
 exports.config = {
   namespace: 'ionic-site-components',
-  bundles: [
-    { components: ['ionic-button'] },
-    { components: ['ionic-newsletter-signup'] }
-  ],
   plugins: [
     sass()
+  ],
+  copy: [
+    { src: 'node_modules/ionicons/dist/collection/icon/svg/md-search.svg' }
   ],
   outputTargets: [
     {
       type: 'dist',
       dir: 'dist',
       baseUrl: '/stencil',
+    },
+    {
+      type: 'www',
+      serviceWorker: false
     }
   ]
 };

@@ -26,6 +26,8 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import 'ionicons';
+
 
 declare global {
 
@@ -105,7 +107,7 @@ declare global {
 
   namespace StencilComponents {
     interface IonicSearch {
-
+      'mobile': boolean;
     }
   }
 
@@ -128,7 +130,7 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicSearchAttributes extends HTMLAttributes {
-
+      'mobile'?: boolean;
     }
   }
 }
