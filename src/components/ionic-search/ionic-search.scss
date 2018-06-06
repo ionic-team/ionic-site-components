@@ -119,6 +119,7 @@ ionic-search {
 
     strong {
       display: block;
+      font-weight: 600;
     }
 
     span {
@@ -292,8 +293,13 @@ ionic-search {
       transform: none;
       opacity: 1;
       z-index: 3;
-      top: 59px;
+      top: 71px;
       left: 22px;
+    }
+
+    a {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     input {
