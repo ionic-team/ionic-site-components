@@ -74,8 +74,10 @@ ionic-search {
   }
 
   input {
-    margin-left: 40px;
-    width: calc(100% - 80px);
+    width: 100%;
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 40px;
     outline: none;
     border: none;
     z-index: 2;

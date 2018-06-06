@@ -131,9 +131,10 @@ export class IonicSearch {
            style={this.dragStyles}
            onTouchMove={e => this.results && this.results.length > 5 ?
             null : e.preventDefault()}>
+        <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
+
         <ion-icon class={`search-static ${this.active ? ' active' : ''}`}
                   name="md-search"></ion-icon>
-        <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
 
         {this.mobile ?
           <div class="mobile-close"
