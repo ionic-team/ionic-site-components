@@ -1,6 +1,6 @@
 {
   "name": "@ionic/ionic-site-components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Stencil components used by the websites belonging to the Ionic Framework team.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
